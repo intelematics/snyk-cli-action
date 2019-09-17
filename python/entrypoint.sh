@@ -1,6 +1,5 @@
 #!/bin/sh -l
 # Env vars:
-# 	SNYK_ACTION_SKIP_COMMENT	If truthy skip commenting
 #	SNYK_ACTION_WRAP_LINES		Number of lines to wrap
 
 set -eux
@@ -49,7 +48,7 @@ set -e
 
 # If PR_DATA is null, then this is not a pull request event and so there's nowhere to comment
 PR_DATA=$(cat /github/workflow/event.json | jq -r .pull_request)
-if [ "$SNYK_ACTION_SKIP_COMMENT" ] || [ "$PR_DATA" = "null" ]; then
+if [ "$PR_DATA" = "null" ]; then
     exit $SUCCESS
 fi
 
