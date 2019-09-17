@@ -3,7 +3,9 @@
 # 	SNYK_ACTION_SKIP_COMMENT	If truthy skip commenting
 #	SNYK_ACTION_WRAP_LINES		Number of lines to wrap
 
-set -eu
+set -eux
+
+echo "WAZZZZUUUUUUUUUUUUUUUUUUUUUUUUUUUUP"
 
 SNYK_ACTION_WRAP_LINES_DEFAULT=10
 
